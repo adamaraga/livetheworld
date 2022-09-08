@@ -4,9 +4,12 @@ import ActivityImages from "../components/ActivityImages";
 import { getDetails } from "../slices/details";
 import ReactMarkdown from "react-markdown";
 import Map from "../components/Map";
+import Modal from "../components/Modal";
+import Login from "../components/Login";
 import Loader from "../components/Loader";
 import { colorTheme } from "../components/styledComponent/color";
 import { toast } from "react-toastify";
+import Activities from "../components/Activities";
 
 function Details() {
   const [loading, setLoading] = useState(false);
@@ -14,7 +17,6 @@ function Details() {
 
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.auth.user);
   const detailsData = useSelector((state) => state.details.details);
   const { message } = useSelector((state) => state.message);
 
@@ -37,6 +39,10 @@ function Details() {
 
   return (
     <div className="details">
+      <Modal>
+        <Login />
+      </Modal>
+
       {loading ? (
         <div style={{ marginTop: "50px" }}>
           <Loader color={colorTheme.secondary} size="20px" />
@@ -67,15 +73,22 @@ function Details() {
                 })}
             </div>
 
-            <p className="details__body__disc__short">
-              {detailsData?.description_short}
-            </p>
-            <ReactMarkdown>{detailsData?.description_long}</ReactMarkdown>
+            <div>
+              <p className="details__body__disc__short">
+                {detailsData?.description_short}
+              </p>
+              <ReactMarkdown>{detailsData?.description_long}</ReactMarkdown>
+            </div>
+
             <Map
               makerTitle={detailsData?.name}
               markerImg={detailsData?.images[0]}
               longitude={detailsData?.longitude}
               latitude={detailsData?.latitude}
+            />
+            <Activities
+              setDetailName={setDetailName}
+              activitiesId={detailsData?.id}
             />
           </div>
         </div>

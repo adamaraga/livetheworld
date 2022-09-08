@@ -1,0 +1,139 @@
+.modal {
+  &__con {
+    position: fixed;
+    display: table;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &.open {
+      transform: scaleY(0.01) scaleX(0);
+      animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      .modal__background {
+        .modal__content {
+          transform: scale(0);
+          animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
+            forwards;
+        }
+      }
+      &.close {
+        transform: scale(1);
+        animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        .modal__background {
+          .modal__content {
+            animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          }
+        }
+      }
+    }
+  }
+
+  // &__closeBtn {
+  //   font: normal normal normal 13px/14px Work Sans;
+  //   color: #1a5035;
+  //   cursor: pointer;
+  // }
+
+  &__background {
+    height: 100%;
+    width: 100%;
+    @include flex-center;
+  }
+
+  &__content {
+    background-color: #fff;
+    min-height: 20rem;
+    width: 80%;
+    border-radius: 1rem;
+    position: relative;
+
+    &__main {
+      padding: 2rem;
+    }
+
+    &__btnCon {
+      position: absolute;
+      top: -1.5rem;
+      right: -1.5rem;
+      height: 35px;
+      width: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: inset -3px 0px 6px rgba(0, 0, 0, 0.254);
+      cursor: pointer;
+      z-index: 10;
+
+      & img {
+        width: 2.5rem;
+      }
+    }
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .modal__content {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .modal__content {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__content {
+    width: 30%;
+  }
+}

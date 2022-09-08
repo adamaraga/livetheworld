@@ -21,7 +21,7 @@ const ActivityImages = ({ images }) => {
         },
         484: {
           slidesPerView: 2.5,
-          spaceBetween: 10,
+          spaceBetween: 5,
         },
         280: {
           slidesPerView: 1.5,
@@ -40,13 +40,12 @@ const ActivityImages = ({ images }) => {
         return (
           <SwiperSlide key={image?.id}>
             <LazyLoadImage
+              className="activityImages__img"
               src={image?.url}
               width={"100%"}
-              height={"100%"}
               alt=""
               placeholderSrc={image?.thumbnail}
             />
-            {/* <img src={image?.url} alt="" /> */}
           </SwiperSlide>
         );
       })}

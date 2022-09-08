@@ -1,0 +1,39 @@
+.activities {
+  margin: 3rem 0;
+  &__title {
+    @include title;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+  &__main {
+    &__img {
+      height: 20rem;
+    }
+
+    & button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    &__title {
+      @include title;
+      font-size: 1.8rem;
+    }
+
+    &__disc {
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      margin-bottom: 3rem;
+
+      & span {
+        display: inline-block;
+        font-size: 20px;
+        cursor: pointer;
+        color: $primary-color;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
