@@ -7,12 +7,17 @@ $primary-color: #fc6b43;
 $secondary-color: #669fb2;
 $error-color: #a92424;
 
-$title-font-size: 20px;
+$title-font-size: 24px;
 
-$body-padding: 2rem;
+:root {
+  --body-padding: 6%;
+}
 
 //  imports
 @import "./mixins";
+@import "./details.scss";
+@import "./map.scss";
+@import "./loader.scss";
 
 // styles
 
@@ -73,4 +78,83 @@ img {
   top: 0;
   transition: all 0.3s ease-in-out;
   background-color: $primary-color;
+}
+
+.noData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.swiper {
+  cursor: grab;
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  // width: auto;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  border-radius: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(252, 109, 69, 0.247) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $primary-color !important;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+  border-radius: 1rem;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --body-padding: 10%;
+  }
+  .swiper {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --body-padding: 20%;
+  }
+  .swiper {
+    height: 400px;
+  }
 }

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API_URL = "https://ltw-cms-stg.herokuapp.com/auth/local/";
+const API_URL = process.env.REACT_APP_MAP_BASE_API_URL;
 
 const login = (email, password) => {
   return axios
-    .post(API_URL, {
+    .post(API_URL + "auth/local/", {
       identifier: email,
       password,
     })
