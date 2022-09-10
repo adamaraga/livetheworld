@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colorTheme } from "../color";
 
 export const Input = styled.input`
-  height: 35px;
+  height: 3.5rem;
   width: ${(props) => (props.width ? props.width : `100%`)};
   border-radius: 5px;
   outline: none;
@@ -11,7 +11,7 @@ export const Input = styled.input`
       ? `1px solid ${colorTheme.error}`
       : `1px solid ${colorTheme.input}`};
   margin-bottom: 1rem;
-  padding: 0 10px;
+  padding: 0 1rem;
   transition: 0.3s;
 
   &:hover {
@@ -31,7 +31,7 @@ export const Input = styled.input`
 
 export const ErrorMessage = styled.div`
   color: ${colorTheme.error};
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 400;
   display: ${(props) => (props.show ? "inline-block" : "none")};
   position: relative;

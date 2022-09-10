@@ -1,6 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
 import { FreeMode, Pagination } from "swiper";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

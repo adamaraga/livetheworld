@@ -22,14 +22,14 @@
     }
 
     &__disc {
-      font-size: 14px;
+      font-size: 1.4rem;
       line-height: 1.5;
       text-align: left;
       margin-bottom: 3rem;
 
       & span {
         display: inline-block;
-        font-size: 20px;
+        font-size: 2rem;
         cursor: pointer;
         color: $primary-color;
         text-transform: capitalize;

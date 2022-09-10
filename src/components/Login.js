@@ -117,7 +117,7 @@ const Login = () => {
         </div>
 
         <button
-          style={{ width: "100%", height: "40px" }}
+          style={{ width: "100%", height: "4rem" }}
           type="submit"
           className="btn"
         >

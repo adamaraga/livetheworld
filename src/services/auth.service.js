@@ -9,11 +9,9 @@ const login = (email, password) => {
       password,
     })
     .then((response) => {
-      console.log("response", response);
       if (response.data.jwt) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
-
       return response.data;
     });
 };

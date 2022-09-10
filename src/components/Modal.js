@@ -12,7 +12,6 @@ const Modal = ({
   const [opened, setOpened] = useState(false);
 
   const user = useSelector((state) => state.auth.user);
-  console.log("user", user);
 
   const mainShowModal = showModal;
 
