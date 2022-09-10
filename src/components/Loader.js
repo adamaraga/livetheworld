@@ -1,5 +1,3 @@
-import { colorTheme } from "./styledComponent/color";
-
 const Loader = ({ color, margin, size }) => {
   const borderSize = size ? size : "0.4rem";
   const colorMain = color ? color : "white";
