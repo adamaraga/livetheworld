@@ -8,6 +8,7 @@ const Map = ({ longitude, latitude, markerImg, makerTitle }) => {
     <div className="map">
       <MapGL
         mapboxAccessToken={mapApiKey}
+        scrollZoom={false}
         initialViewState={{
           longitude,
           latitude,
